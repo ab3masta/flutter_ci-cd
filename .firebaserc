@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "portfolio-e3c04"
-  }
+  },
+  "targets": {
+    "portfolio-e3c04": {
+      "hosting": {
+        "flutter-web-ci-cd": [
+          "flutter-web-ci-cd"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
