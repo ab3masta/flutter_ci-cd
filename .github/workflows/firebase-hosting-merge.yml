@@ -49,8 +49,8 @@ jobs:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
 
-  build_appundle:
-    name: Generate apk files
+  build_appbundle:
+    name: Generate appbundle files
     needs: [flutter_test]
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
