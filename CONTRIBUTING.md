@@ -12,7 +12,7 @@ Before submitting a pull request, please:
 
 ## Bug Reports and Feature Requests
 
-If you find a bug or have a feature request, please submit an issue on the [GitHub issue tracker](https://github.com/your-username/your-repo-name/issues).
+If you find a bug or have a feature request, please submit an issue on the [GitHub issue tracker](https://github.com/AbdouAbarchiAboubacar/flutter_ci-cd/issues).
 
 ## Code of Conduct
 

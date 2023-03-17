@@ -22,8 +22,8 @@ This project relies on several third-party dependencies. While we strive to keep
 
 ## Code of Conduct
 
-This project adheres to the [Contributor Covenant code of conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [your email or contact information].
+This project adheres to the [Contributor Covenant code of conduct](https://github.com/AbdouAbarchiAboubacar/flutter_ci-cd/blob/master/.github/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [your email or contact information].
 
 ## License
 
-By contributing to the Flutter Template with CI/CD, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+By contributing to the Flutter Template with CI/CD, you agree that your contributions will be licensed under the [MIT License](https://github.com/AbdouAbarchiAboubacar/flutter_ci-cd/blob/master/LICENCE).
