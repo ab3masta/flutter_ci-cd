@@ -34,7 +34,7 @@ This template includes the following features:
 
 ## Contributing 🤝
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Please see [CONTRIBUTING.md](https://github.com/AbdouAbarchiAboubacar/flutter_ci-cd/blob/master/CONTRIBUTING.md) for guidelines.
 
 ## License 📝
 
