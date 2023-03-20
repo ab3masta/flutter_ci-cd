@@ -10,7 +10,7 @@ This is a Flutter template with Continuous Integration and Continuous Deployment
 
 To use this template, simply click on the "Use this template" button at the top of the repository page or clone this repository to your local machine: 🤖
 
-```
+```sh
 git clone https://github.com/your-username/your-repo-name.git
 ```
 
