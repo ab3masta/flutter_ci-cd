@@ -48,6 +48,8 @@ jobs:
           path: build/web
 
   deploy:
+    name: Deploy to github page
+    needs: [build_web]
     runs-on: ubuntu-latest
     environment:
         name: github-pages
