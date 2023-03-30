@@ -71,7 +71,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: web-build
-          path: build/web
+          path: web-build
       - name: deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v1
