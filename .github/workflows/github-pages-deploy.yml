@@ -58,21 +58,15 @@ jobs:
         pages: write
         id-token: write
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@master
       - name: setup node
         uses: actions/setup-node@v3
         with:
             node-version: 18.x
         env:
             PUBLIC_URL: /portfolio_frontend_template
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: web-build
-          path: build/web
       - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
