@@ -4,31 +4,69 @@ on:
     branches: [ master ]
 
 jobs:
-  deploy:
+    flutter_test:
+        name: Run flutter test and analyze
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-java@v1
+            with:
+              java-version: "18.x"
+          - uses: subosito/flutter-action@v2
+            with:
+              flutter-version: '2.10.4'
+              channel: "stable"
+          - run: flutter pub get
+          - run: flutter analyze
+          - run: flutter test
+    
+    build_web:
+    name: Build Flutter (Web)
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-java@v1
+        with:
+            java-version: "18.x"
+        - uses: subosito/flutter-action@v2
+        with:
+            channel: "stable"
+        - run: flutter pub get
+        - run: flutter config --enable-web
+        - run: flutter build web
+        - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+            name: web-build
+            path: build/web
+
+    deploy:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
     permissions:
-      pages: write
-      id-token: write
+        pages: write
+        id-token: write
     steps:
-      - name: checkout
+        - name: checkout
         uses: actions/checkout@v3
-      - name: setup node
+        - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
-      - name: install dependencies
-        run: npm ci
-      - name: build app
-        run: npm run build --if-present  
+            node-version: 18.x
+    #   - name: install dependencies
+    #     run: npm ci
+    #   - name: build app
+    #     run: npm run build --if-present  
         env:
-          PUBLIC_URL: /portfolio_frontend_template
-      - name: upload artifact
+            PUBLIC_URL: /portfolio_frontend_template
+        - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./build
-      - name: deploy to github pages
+            name: web-build
+            path: build/web
+        - name: deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v1
